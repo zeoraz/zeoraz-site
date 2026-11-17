@@ -199,7 +199,7 @@ export function AureliaShowcase() {
       </div>
 
       {/* ─── NAVIGATION ────────────────────────────────────────────────────── */}
-      <nav className="sticky top-0 z-40 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-[#EAE3D2] px-6 lg:px-12 py-5 transition-all">
+      <nav className="sticky top-0 z-40 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-[#EAE3D2] px-4 sm:px-6 lg:px-12 py-3.5 sm:py-5 transition-all">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-baseline gap-3">
             <Link
@@ -304,17 +304,17 @@ export function AureliaShowcase() {
       </section>
 
       {/* ─── ABOUT / PHILOSOPHY SECTION (Matches Reference Video Frame 3) ──── */}
-      <section id="about" className="py-20 sm:py-28 px-6 lg:px-12 bg-[#F5F1E8] border-y border-[#E8DFC8]">
+      <section id="about" className="py-16 sm:py-28 px-4 sm:px-6 lg:px-12 bg-[#F5F1E8] border-y border-[#E8DFC8]">
         <div className="max-w-7xl mx-auto">
           {/* Section Label */}
-          <div className="flex items-center gap-2 mb-10 text-xs tracking-[0.2em] uppercase text-[#8C806F]">
+          <div className="flex items-center gap-2 mb-8 sm:mb-10 text-xs tracking-[0.2em] uppercase text-[#8C806F]">
             <span className="text-[#B39352] font-mono">[+]</span>
             <span>About Aurelia</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             {/* Left Column: Thumbnail preview + Editorial Stats */}
-            <div className="lg:col-span-5 space-y-10">
+            <div className="lg:col-span-5 space-y-8 sm:space-y-10">
               <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-md border border-[#DCD3C0]">
                 <Image
                   src="/images/aurelia/bedroom.jpg"
@@ -326,9 +326,9 @@ export function AureliaShowcase() {
               </div>
 
               {/* 3 Architectural Stats */}
-              <div className="grid grid-cols-3 gap-6 pt-4 border-t border-[#DED4C1]">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-4 border-t border-[#DED4C1]">
                 <div>
-                  <span className="font-serif text-4xl sm:text-5xl text-[#1C1917] block leading-none mb-1">
+                  <span className="font-serif text-3xl sm:text-5xl text-[#1C1917] block leading-none mb-1">
                     18
                   </span>
                   <span className="text-[10px] tracking-[0.16em] uppercase text-[#736858] font-mono block">
@@ -336,7 +336,7 @@ export function AureliaShowcase() {
                   </span>
                 </div>
                 <div>
-                  <span className="font-serif text-4xl sm:text-5xl text-[#1C1917] block leading-none mb-1">
+                  <span className="font-serif text-3xl sm:text-5xl text-[#1C1917] block leading-none mb-1">
                     5
                   </span>
                   <span className="text-[10px] tracking-[0.16em] uppercase text-[#736858] font-mono block">
@@ -344,7 +344,7 @@ export function AureliaShowcase() {
                   </span>
                 </div>
                 <div>
-                  <span className="font-serif text-4xl sm:text-5xl text-[#1C1917] block leading-none mb-1">
+                  <span className="font-serif text-3xl sm:text-5xl text-[#1C1917] block leading-none mb-1">
                     24/7
                   </span>
                   <span className="text-[10px] tracking-[0.16em] uppercase text-[#736858] font-mono block">
@@ -401,7 +401,7 @@ export function AureliaShowcase() {
       </section>
 
       {/* ─── INTERACTIVE BENTO GALLERY (Matches Reference Video Frames 4, 5, 6) ─ */}
-      <section id="spaces" className="py-20 sm:py-32 px-6 lg:px-12 bg-[#FBF9F5]">
+      <section id="spaces" className="py-16 sm:py-32 px-4 sm:px-6 lg:px-12 bg-[#FBF9F5]">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -551,7 +551,7 @@ export function AureliaShowcase() {
       </section>
 
       {/* ─── RESIDENCES / PENTHOUSES SPECIFICATIONS ────────────────────────── */}
-      <section id="residences" className="py-20 sm:py-28 px-6 lg:px-12 bg-[#F5F1E8] border-t border-[#E8DFC8]">
+      <section id="residences" className="py-16 sm:py-28 px-4 sm:px-6 lg:px-12 bg-[#F5F1E8] border-t border-[#E8DFC8]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-[#8C806F] block mb-2">
@@ -692,7 +692,7 @@ export function AureliaShowcase() {
       </section>
 
       {/* ─── LOCATION & INQUIRY CALL TO ACTION ──────────────────────────────── */}
-      <section id="location" className="py-20 sm:py-28 px-6 lg:px-12 bg-[#221E19] text-white">
+      <section id="location" className="py-16 sm:py-28 px-4 sm:px-6 lg:px-12 bg-[#221E19] text-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             <span className="text-xs font-mono tracking-[0.25em] uppercase text-[#C7B591]">
@@ -746,7 +746,7 @@ export function AureliaShowcase() {
       </section>
 
       {/* ─── FOOTER ────────────────────────────────────────────────────────── */}
-      <footer className="py-12 px-6 lg:px-12 bg-[#171412] text-white/60 text-xs border-t border-white/10">
+      <footer className="py-12 px-4 sm:px-6 lg:px-12 bg-[#171412] text-white/60 text-xs border-t border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <span className="font-serif text-lg tracking-[0.2em] font-normal uppercase text-white block">
@@ -756,7 +756,7 @@ export function AureliaShowcase() {
               © 2026 Aurelia Private Residences. All rights reserved.
             </span>
           </div>
-          <div className="flex items-center gap-6 text-[11px]">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[11px]">
             <Link href="/" className="hover:text-white transition-colors">
               Zeoraz Agency Homepage
             </Link>
@@ -778,7 +778,7 @@ export function AureliaShowcase() {
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              className="relative w-full max-w-lg bg-[#FBF9F5] rounded-3xl p-6 sm:p-8 border border-[#E5DDD0] shadow-2xl text-[#1C1917]"
+              className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-[#FBF9F5] rounded-3xl p-5 sm:p-8 border border-[#E5DDD0] shadow-2xl text-[#1C1917]"
             >
               <button
                 type="button"
@@ -786,7 +786,7 @@ export function AureliaShowcase() {
                   setIsModalOpen(false);
                   setFormSubmitted(false);
                 }}
-                className="absolute top-5 right-5 p-2 rounded-full hover:bg-[#EAE3D2] transition-colors cursor-pointer text-[#6B6152]"
+                className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full hover:bg-[#EAE3D2] transition-colors cursor-pointer text-[#6B6152]"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
@@ -839,7 +839,7 @@ export function AureliaShowcase() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Lord Sterling / Sarah Al-Mansoori"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] focus:outline-hidden focus:border-[#1C1917] transition-colors"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] text-base sm:text-xs focus:outline-hidden focus:border-[#1C1917] transition-colors"
                       />
                     </div>
 
@@ -854,7 +854,7 @@ export function AureliaShowcase() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="client@luxury.com"
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] focus:outline-hidden focus:border-[#1C1917] transition-colors"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] text-base sm:text-xs focus:outline-hidden focus:border-[#1C1917] transition-colors"
                         />
                       </div>
                       <div>
@@ -867,7 +867,7 @@ export function AureliaShowcase() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="+971 50 123 4567"
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] focus:outline-hidden focus:border-[#1C1917] transition-colors"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] text-base sm:text-xs focus:outline-hidden focus:border-[#1C1917] transition-colors"
                         />
                       </div>
                     </div>
@@ -879,7 +879,7 @@ export function AureliaShowcase() {
                       <select
                         value={formData.residenceType}
                         onChange={(e) => setFormData({ ...formData, residenceType: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] focus:outline-hidden focus:border-[#1C1917] transition-colors cursor-pointer"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] text-base sm:text-xs focus:outline-hidden focus:border-[#1C1917] transition-colors cursor-pointer"
                       >
                         <option>The Sky Penthouse (6,200 sq.ft)</option>
                         <option>Garden Duplex Villa (4,850 sq.ft)</option>
@@ -894,7 +894,7 @@ export function AureliaShowcase() {
                       <select
                         value={formData.timeline}
                         onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] focus:outline-hidden focus:border-[#1C1917] transition-colors cursor-pointer"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DDD3C2] text-base sm:text-xs focus:outline-hidden focus:border-[#1C1917] transition-colors cursor-pointer"
                       >
                         <option>Immediate / 2026</option>
                         <option>Within 6 Months</option>

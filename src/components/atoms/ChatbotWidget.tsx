@@ -64,7 +64,7 @@ export const ChatbotWidget = () => {
   };
 
   return (
-    <div className="fixed bottom-22 sm:bottom-24 right-4 sm:right-6 z-50 flex flex-col items-end pointer-events-none">
+    <div className="fixed bottom-[72px] sm:bottom-24 right-3.5 sm:right-6 z-50 flex flex-col items-end pointer-events-none">
       {/* Chat Window */}
       <div
         aria-hidden={!isOpen}
@@ -178,17 +178,17 @@ export const ChatbotWidget = () => {
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="relative flex items-center justify-center w-14 h-14 bg-[#0F172A] hover:bg-[#1E293B] text-white rounded-full shadow-xl shadow-slate-950/25 hover:scale-105 border border-[#334155] transition-all duration-300 cursor-pointer"
+          className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#0F172A] hover:bg-[#1E293B] text-white rounded-full shadow-xl shadow-slate-950/25 hover:scale-105 border border-[#334155] transition-all duration-300 cursor-pointer"
           aria-label="Toggle Zeoraz AI Assistant"
         >
           {isOpen ? (
             <X className="w-5 h-5 text-white transition-transform duration-200" />
           ) : (
             <div className="relative flex items-center justify-center w-full h-full">
-              <Bot className="w-6 h-6 text-[#EFF6FF]" />
-              <span className="absolute top-2 right-2 flex h-3 w-3">
+              <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-[#EFF6FF]" />
+              <span className="absolute top-1.5 sm:top-2 right-1.5 sm:right-2 flex h-2.5 sm:h-3 w-2.5 sm:w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#60A5FA] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#3B82F6] border-2 border-[#0F172A]"></span>
+                <span className="relative inline-flex rounded-full h-2.5 sm:h-3 w-2.5 sm:w-3 bg-[#3B82F6] border-2 border-[#0F172A]"></span>
               </span>
             </div>
           )}
