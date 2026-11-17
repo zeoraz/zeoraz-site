@@ -23,7 +23,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Sparkles,
-  Check,
   Workflow,
 } from "lucide-react";
 import { TalkToUsModal } from "@/components/organisms/TalkToUsModal";
@@ -197,12 +196,6 @@ export const LandingPageContent = () => {
       clearTimeout(clearTimer);
     };
   }, []);
-
-  const toggleService = (srv: string) => {
-    setSelectedServices((prev) =>
-      prev.includes(srv) ? prev.filter((s) => s !== srv) : [...prev, srv]
-    );
-  };
 
   const handleSelectScopeAndScroll = (scopeKey: string) => {
     setSelectedServices((prev) => (prev.includes(scopeKey) ? prev : [...prev, scopeKey]));
@@ -1121,37 +1114,6 @@ export const LandingPageContent = () => {
                 onSubmit={handleInquirySubmit}
                 className="space-y-5 sm:space-y-6 bg-[#F8FAFC] p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-[#E2E8F0] shadow-xs"
               >
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#334155] mb-3">
-                    What would you like to build?
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Website Building",
-                      "Mobile App Development",
-                      "AI Agent Building",
-                      "Full Web + App + AI Package",
-                    ].map((srv) => {
-                      const active = selectedServices.includes(srv);
-                      return (
-                        <button
-                          type="button"
-                          key={srv}
-                          onClick={() => toggleService(srv)}
-                          className={`px-4 py-2 rounded-full text-xs font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
-                            active
-                              ? "bg-[#2563EB] text-white shadow-xs"
-                              : "bg-white text-[#475569] hover:bg-[#EFF6FF] border border-[#E2E8F0]"
-                          }`}
-                        >
-                          {active && <Check className="w-3.5 h-3.5 text-white" />}
-                          <span>{srv}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#334155] mb-2">
@@ -1211,7 +1173,7 @@ export const LandingPageContent = () => {
                 </div>
                 <h3 className="font-serif text-3xl text-[#0F172A]">Inquiry Received</h3>
                 <p className="text-sm text-[#475569] max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong className="text-[#0F172A]">{contactName}</strong>. We received your project details ({selectedServices.join(", ")}) and will reply to <strong className="text-[#0F172A]">{contactEmail}</strong> within 24 hours.
+                  Thank you, <strong className="text-[#0F172A]">{contactName}</strong>. We received your project details and will reply to <strong className="text-[#0F172A]">{contactEmail}</strong> within 24 hours.
                 </p>
                 <button
                   type="button"
