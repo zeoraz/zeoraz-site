@@ -927,9 +927,6 @@ export const LandingPageContent = () => {
                   <div className="absolute top-3 left-3 bg-[#1C1917]/85 backdrop-blur-md px-3 py-1 rounded-full text-white text-[10px] font-mono tracking-wider uppercase border border-white/20">
                     Flagship Concept Case Study
                   </div>
-                  <div className="absolute bottom-3 right-3 bg-emerald-950/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-emerald-300 text-[10px] font-mono font-bold border border-emerald-500/30">
-                    0.38s Next.js Load
-                  </div>
                 </div>
 
                 <div className="lg:col-span-5 space-y-4">
