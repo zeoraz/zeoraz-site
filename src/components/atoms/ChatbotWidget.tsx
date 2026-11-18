@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { X, Send, User, Bot, Sparkles } from "lucide-react";
+import { X, Send, User, Bot, Sparkles, MessageSquare } from "lucide-react";
 
 interface Message {
   role: "bot" | "user";
@@ -185,7 +185,7 @@ export const ChatbotWidget = () => {
             <X className="w-5 h-5 text-white transition-transform duration-200" />
           ) : (
             <div className="relative flex items-center justify-center w-full h-full">
-              <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-[#EFF6FF]" />
+              <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 text-[#EFF6FF] fill-[#EFF6FF]/20" />
               <span className="absolute top-1.5 sm:top-2 right-1.5 sm:right-2 flex h-2.5 sm:h-3 w-2.5 sm:w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#60A5FA] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 sm:h-3 w-2.5 sm:w-3 bg-[#3B82F6] border-2 border-[#0F172A]"></span>
