@@ -973,49 +973,11 @@ export const LandingPageContent = () => {
                 </div>
               </div>
             </div>
-
-            {/* CO-FOUNDER & PERSONAL PORTFOLIO SECTION (shanaan.com) */}
-            <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#E2E8F0] p-4 sm:p-8 lg:p-10 shadow-xs">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="space-y-3 max-w-xl">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EFF6FF] text-xs font-medium text-[#1D4ED8] border border-[#DBEAFE]">
-                    <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" /> Co-Founder &amp; Engineering Lead
-                  </span>
-                  <h3 className="font-serif font-normal text-2xl sm:text-4xl tracking-[-0.02em] text-[#0F172A] leading-[1.08]">
-                    Shabaab Hanaan
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
-                    Co-Founder &amp; Software Engineer behind Zeoraz—building full-stack web platforms, mobile applications, and practical AI tools. View my personal portfolio at{" "}
-                    <a
-                      href="https://shanaan.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#2563EB] hover:text-[#1D4ED8] underline underline-offset-4"
-                    >
-                      shanaan.com
-                    </a>
-                    .
-                  </p>
-                </div>
-
-                <div className="shrink-0 w-full sm:w-auto">
-                  <a
-                    href="https://shanaan.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto justify-center px-6 py-3 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs sm:text-sm font-medium inline-flex items-center gap-2 shadow-sm transition-colors text-center"
-                  >
-                    <span>Visit shanaan.com</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
         {/* FAQ SECTION ("All You Need to Know") */}
-        <section id="faq" className="scroll-mt-24 py-16 sm:py-20 px-6 lg:px-12 bg-[#F8FAFC] border-t border-slate-200/70">
+        <section id="faq" className="scroll-mt-24 py-16 sm:py-20 px-4 sm:px-6 lg:px-12 bg-[#F8FAFC] border-t border-slate-200/70">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="font-serif font-normal text-3xl sm:text-5xl tracking-[-0.02em] text-[#0F172A] mb-3">
@@ -1206,7 +1168,7 @@ export const LandingPageContent = () => {
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 lg:gap-10 pb-7 sm:pb-10 border-b border-slate-200/80">
-            <div className="md:col-span-5 space-y-2 sm:space-y-3 min-w-0">
+            <div className="md:col-span-5 space-y-2.5 sm:space-y-3 min-w-0">
               <div className="flex items-center gap-1.5 sm:gap-2.5">
                 <Image
                   src="/images/logo.png"
@@ -1220,6 +1182,18 @@ export const LandingPageContent = () => {
               <p className="text-xs sm:text-sm text-[#475569] max-w-sm leading-relaxed">
                 Websites, iOS &amp; Android mobile apps, and custom AI agents crafted for modern businesses.
               </p>
+              <div className="pt-1">
+                <a
+                  href="https://shanaan.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 hover:bg-white border border-slate-200 text-[11px] sm:text-xs text-[#334155] shadow-xs hover:border-slate-300 transition-all group cursor-pointer"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                  <span>Engineering Lead: <strong className="text-[#0F172A] group-hover:text-[#2563EB] transition-colors">Shabaab Hanaan</strong></span>
+                  <ArrowUpRight className="w-3 h-3 text-[#64748B] group-hover:text-[#2563EB] transition-colors" />
+                </a>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 md:contents gap-6">
