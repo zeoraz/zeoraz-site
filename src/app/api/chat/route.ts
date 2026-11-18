@@ -75,29 +75,32 @@ export async function POST(req: Request) {
 
     const geminiKey = process.env.GEMINI_API_KEY;
     if (geminiKey) {
-      try {
-        const res = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(geminiKey)}`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-              contents: messages.slice(-8).map((m) => ({
-                role: m.role === "user" ? "user" : "model",
-                parts: [{ text: m.text }],
-              })),
-            }),
-          }
-        );
+      const candidateModels = ["gemini-3.5-flash-lite", "gemini-flash-latest", "gemini-2.5-flash"];
+      for (const model of candidateModels) {
+        try {
+          const res = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(geminiKey)}`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+                contents: messages.slice(-8).map((m) => ({
+                  role: m.role === "user" ? "user" : "model",
+                  parts: [{ text: m.text }],
+                })),
+              }),
+            }
+          );
 
-        if (res.ok) {
-          const data = await res.json();
-          const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-          if (reply) return NextResponse.json({ reply, provider: "gemini" });
+          if (res.ok) {
+            const data = await res.json();
+            const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+            if (reply) return NextResponse.json({ reply, provider: "gemini" });
+          }
+        } catch (geminiErr) {
+          console.error(`Gemini model ${model} call failed:`, geminiErr);
         }
-      } catch (geminiErr) {
-        console.error("Gemini API call failed:", geminiErr);
       }
     }
 
