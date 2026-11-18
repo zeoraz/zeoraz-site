@@ -14,9 +14,13 @@ As an active student (SLIIT), Zeoraz leverages these verified free credits to ru
 
 | Tool / Provider | Free Benefit | Strategic Use for Zeoraz |
 | :--- | :--- | :--- |
-| **MongoDB Atlas** | **\$50 in Atlas Credits** + Free Compass & University Certification | Hosts production contact inquiries, listings, and customer data. |
-| **Microsoft Azure** | **\$100 Cloud Credit** (No credit card needed) | Background data scraping scripts, microservices, and compute. |
-| **Heroku** | **\$13/month for 24 months** (\$312 total) | Persistent backend workers and Node/Python automation. |
+| **1Password** | **Free for 2 Years** + Developer Tools & CLI | Enterprise secret management: Safely store client API keys, MongoDB URIs, SSH keys, and Vercel production credentials without exposing them in code. |
+| **Termius** | **Free Termius Pro & Team** for students | Premium SSH client on Desktop & Mobile with encrypted sync. Seamlessly access Azure VMs, Docker hosts, and client cloud servers on the go. |
+| **MongoDB Atlas** | **$50 in Atlas Credits** + Free Compass & Certifications | Hosts production inquiries, listings, and customer databases with zero infrastructure spend. |
+| **Datadog** | **Free 2 Years** APM & Server Monitoring | Enterprise-grade observability: Monitor live API response times, errors, and system health. Use live dashboards to demonstrate 99.99% uptime to clients. |
+| **Educative** | **6 Months Free Access** to 70+ Hands-On Courses | Fast-track mastery in System Design, Microservices, Python Data Pipelines, and Full-Stack Next.js. |
+| **Microsoft Azure** | **$100 Cloud Credit** (No credit card required) | Host long-running background scraping jobs, microservice workers, and containerized backend APIs. |
+| **Heroku** | **$13/month for 24 months** ($312 total) | Persistent backend workers and Node/Python automation. |
 | **Name.com** | **Free 1-Year Domain** (`.studio`, `.dev`, `.app`, `.software`) | Host staging/client demo showcases (e.g. `zeoraz.studio` or `zeoraz.dev`). |
 | **.TECH** | **1 Free `.tech` Domain** for 1 year | Additional branded tech property or tool. |
 | **Namecheap** | **1 Free `.me` Domain + Free SSL** | Personal founder portfolio domain (`shabaab.me`). |
@@ -25,7 +29,7 @@ As an active student (SLIIT), Zeoraz leverages these verified free credits to ru
 | **GitHub Copilot** | **Free Unlimited AI Completions** | 2x coding velocity for Next.js, React, and TypeScript. |
 | **JetBrains** | **Free All-Products Pack** | WebStorm and IntelliJ professional IDE licenses. |
 | **Notion** | **Free Notion Plus + Notion AI** | Zeoraz client CRM, prospect tracking, and project portals. |
-| **SimpleAnalytics**| **Free Starter Plan (100k pageviews/mo)** | Privacy-first analytics to bundle into client packages as a \$200 bonus. |
+| **SimpleAnalytics**| **Free Starter Plan (100k pageviews/mo)** | Privacy-first analytics to bundle into client packages as a $200 bonus. |
 | **Sentry** | **50K Free Error Events / Month** | Production error monitoring on `zeoraz.com` and client apps. |
 
 ---
