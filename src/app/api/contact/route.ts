@@ -62,8 +62,13 @@ export async function POST(req: Request) {
         : "Website Building";
     const message = typeof body?.message === "string" ? body.message.trim() : "";
 
-    if (!name || !email) {
-      return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
+    if (!name || name.length < 2) {
+      return NextResponse.json({ error: "Please enter a valid name (at least 2 characters)" }, { status: 400 });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      return NextResponse.json({ error: "Please enter a valid email address" }, { status: 400 });
     }
 
     // Store submission in MongoDB first (bounded timeout so unreachable clusters do not stall)

@@ -173,6 +173,12 @@ export const LandingPageContent = () => {
   const [contactMessage, setContactMessage] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formErrors, setFormErrors] = useState<{
+    name?: string;
+    email?: string;
+    message?: string;
+  }>({});
+  const [formServerError, setFormServerError] = useState<string | null>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -202,9 +208,41 @@ export const LandingPageContent = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const validateForm = () => {
+    const errors: { name?: string; email?: string; message?: string } = {};
+    const nameTrimmed = contactName.trim();
+    const emailTrimmed = contactEmail.trim();
+    const messageTrimmed = contactMessage.trim();
+
+    if (!nameTrimmed) {
+      errors.name = "Please enter your name";
+    } else if (nameTrimmed.length < 2) {
+      errors.name = "Name must be at least 2 characters";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailTrimmed) {
+      errors.email = "Please enter your email address";
+    } else if (!emailRegex.test(emailTrimmed)) {
+      errors.email = "Please enter a valid email address (e.g. name@company.com)";
+    }
+
+    if (!messageTrimmed) {
+      errors.message = "Please describe your project requirements";
+    } else if (messageTrimmed.length < 5) {
+      errors.message = "Please provide at least 5 characters describing your project";
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleInquirySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!contactName || !contactEmail) return;
+    setFormServerError(null);
+
+    if (!validateForm()) return;
+
     setIsSubmitting(true);
 
     try {
@@ -212,19 +250,21 @@ export const LandingPageContent = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: contactName,
-          email: contactEmail,
+          name: contactName.trim(),
+          email: contactEmail.trim(),
           serviceNeeded: selectedServices.join(", ") || "Website Building",
-          message: contactMessage,
+          message: contactMessage.trim(),
         }),
       });
+      const data = await res.json().catch(() => ({}));
       if (res.ok) {
         setFormSubmitted(true);
+        setFormErrors({});
       } else {
-        setToastMessage("Failed to submit inquiry. Please try again.");
+        setFormServerError(data.error || "Failed to submit inquiry. Please try again.");
       }
     } catch {
-      setToastMessage("Network error. Please try again or reach us via WhatsApp.");
+      setFormServerError("Network error. Please try again or reach us via WhatsApp.");
     } finally {
       setIsSubmitting(false);
     }
@@ -1071,50 +1111,94 @@ export const LandingPageContent = () => {
             {!formSubmitted ? (
               <form
                 onSubmit={handleInquirySubmit}
+                noValidate
                 className="space-y-5 sm:space-y-6 bg-[#F8FAFC] p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-[#E2E8F0] shadow-xs"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#334155] mb-2">
-                      Your Name
+                      Your Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       required
                       placeholder="Your name"
                       value={contactName}
-                      onChange={(e) => setContactName(e.target.value)}
-                      className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2E8F0] text-base sm:text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB]"
+                      onChange={(e) => {
+                        setContactName(e.target.value);
+                        if (formErrors.name) setFormErrors((prev) => ({ ...prev, name: undefined }));
+                      }}
+                      className={`w-full px-4 py-3 rounded-2xl bg-white border text-base sm:text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none transition-colors ${
+                        formErrors.name
+                          ? "border-red-400 focus:border-red-500 focus:ring-1 focus:ring-red-400 bg-red-50/20"
+                          : "border-[#E2E8F0] focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB]"
+                      }`}
                     />
+                    {formErrors.name && (
+                      <p className="text-[11px] text-red-600 mt-1.5 flex items-center gap-1 font-medium">
+                        <span>•</span> {formErrors.name}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#334155] mb-2">
-                      Email Address
+                      Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
                       required
                       placeholder="you@company.com"
                       value={contactEmail}
-                      onChange={(e) => setContactEmail(e.target.value)}
-                      className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2E8F0] text-base sm:text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB]"
+                      onChange={(e) => {
+                        setContactEmail(e.target.value);
+                        if (formErrors.email) setFormErrors((prev) => ({ ...prev, email: undefined }));
+                      }}
+                      className={`w-full px-4 py-3 rounded-2xl bg-white border text-base sm:text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none transition-colors ${
+                        formErrors.email
+                          ? "border-red-400 focus:border-red-500 focus:ring-1 focus:ring-red-400 bg-red-50/20"
+                          : "border-[#E2E8F0] focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB]"
+                      }`}
                     />
+                    {formErrors.email && (
+                      <p className="text-[11px] text-red-600 mt-1.5 flex items-center gap-1 font-medium">
+                        <span>•</span> {formErrors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-[0.14em] text-[#334155] mb-2">
-                    Project Details
+                    Project Details <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     rows={4}
                     required
                     placeholder="Tell us about your website or mobile app idea, key features, and target timeline..."
                     value={contactMessage}
-                    onChange={(e) => setContactMessage(e.target.value)}
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2E8F0] text-base sm:text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB]"
+                    onChange={(e) => {
+                      setContactMessage(e.target.value);
+                      if (formErrors.message) setFormErrors((prev) => ({ ...prev, message: undefined }));
+                    }}
+                    className={`w-full px-4 py-3 rounded-2xl bg-white border text-base sm:text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none transition-colors ${
+                      formErrors.message
+                        ? "border-red-400 focus:border-red-500 focus:ring-1 focus:ring-red-400 bg-red-50/20"
+                        : "border-[#E2E8F0] focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB]"
+                    }`}
                   />
+                  {formErrors.message && (
+                    <p className="text-[11px] text-red-600 mt-1.5 flex items-center gap-1 font-medium">
+                      <span>•</span> {formErrors.message}
+                    </p>
+                  )}
                 </div>
+
+                {formServerError && (
+                  <div className="p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+                    <span>⚠️</span>
+                    <span>{formServerError}</span>
+                  </div>
+                )}
 
                 <button
                   type="submit"
