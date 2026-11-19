@@ -14,12 +14,19 @@ As an active student (SLIIT), Zeoraz leverages these verified free credits to ru
 
 | Tool / Provider | Free Benefit | Strategic Use for Zeoraz |
 | :--- | :--- | :--- |
+| **Clerk** | **Free Pro Plan** for students | Enterprise Auth & User Management: Drop production-ready Google/GitHub OAuth, Passkeys, B2B Org management, and role-based access control into Next.js client apps in 15 minutes. |
 | **1Password** | **Free for 2 Years** + Developer Tools & CLI | Enterprise secret management: Safely store client API keys, MongoDB URIs, SSH keys, and Vercel production credentials without exposing them in code. |
-| **Termius** | **Free Termius Pro & Team** for students | Premium SSH client on Desktop & Mobile with encrypted sync. Seamlessly access Azure VMs, Docker hosts, and client cloud servers on the go. |
+| **FrontendMasters** | **6 Months Free Full Access** | The industry gold standard for advanced TypeScript, Next.js internal performance, and fullstack Node.js architectures. |
+| **Polypane** | **1 Year Free Individual Plan** | Responsive multi-viewport engineering browser: audit and preview layouts across 10 mobile/tablet/desktop screen sizes simultaneously. |
+| **BrowserStack** | **1 Year Free Automate Mobile Plan** | Test client builds on real iPhone & Android hardware to guarantee flawless responsive performance before client delivery. |
+| **Zyte (Scrapy Cloud)**| **1 Unit Free Forever** | Battle-tested cloud crawler: automatically scrape local business directories, PageSpeed metrics, and contact emails for outbound lead generation. |
 | **MongoDB Atlas** | **$50 in Atlas Credits** + Free Compass & Certifications | Hosts production inquiries, listings, and customer databases with zero infrastructure spend. |
 | **Datadog** | **Free 2 Years** APM & Server Monitoring | Enterprise-grade observability: Monitor live API response times, errors, and system health. Use live dashboards to demonstrate 99.99% uptime to clients. |
+| **AstraSecurity** | **6 Months Free Web Firewall & Scanner** | Package as a "$350 Enterprise Security & Firewall Add-on" for client website deliveries. |
 | **Educative** | **6 Months Free Access** to 70+ Hands-On Courses | Fast-track mastery in System Design, Microservices, Python Data Pipelines, and Full-Stack Next.js. |
 | **Microsoft Azure** | **$100 Cloud Credit** (No credit card required) | Host long-running background scraping jobs, microservice workers, and containerized backend APIs. |
+| **Stripe** | **$25 in Fee Credits** | Zero-fee international USD payment processing for client retainers and project invoices. |
+| **Termius** | **Free Termius Pro & Team** for students | Premium SSH client on Desktop & Mobile with encrypted sync. Seamlessly access Azure VMs, Docker hosts, and client cloud servers on the go. |
 | **Heroku** | **$13/month for 24 months** ($312 total) | Persistent backend workers and Node/Python automation. |
 | **Name.com** | **Free 1-Year Domain** (`.studio`, `.dev`, `.app`, `.software`) | Host staging/client demo showcases (e.g. `zeoraz.studio` or `zeoraz.dev`). |
 | **.TECH** | **1 Free `.tech` Domain** for 1 year | Additional branded tech property or tool. |
@@ -31,6 +38,7 @@ As an active student (SLIIT), Zeoraz leverages these verified free credits to ru
 | **Notion** | **Free Notion Plus + Notion AI** | Zeoraz client CRM, prospect tracking, and project portals. |
 | **SimpleAnalytics**| **Free Starter Plan (100k pageviews/mo)** | Privacy-first analytics to bundle into client packages as a $200 bonus. |
 | **Sentry** | **50K Free Error Events / Month** | Production error monitoring on `zeoraz.com` and client apps. |
+| **Testmail** | **Free Essential Plan** | Unlimited test mailboxes for automated webhook and email deliverability testing. |
 
 ---
 
